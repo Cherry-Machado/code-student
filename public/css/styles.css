@@ -8,4 +8,73 @@
   font-family: "Rubik", "Helvetica", sans-serif;
 }
 
+#top-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 10px 0 30px 0;
+}
 
+.siteName {
+  font-size: 2rem;
+  text-align: left;
+}
+
+.siteName a {
+  text-decoration: none;
+  color: #333;
+  font-family: "Raleway", sans-serif;
+}
+
+#tools {
+  font-size: 1rem;
+  text-align: right;
+}
+
+#tools a {
+  text-decoration: none;
+  color: #333;
+  font-family: "Raleway", sans-serif;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  list-style: none;
+  background-color: #333;
+  padding: 20px 10px;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+.welcome-title {
+  font-size: 1.4rem;
+  padding: 15px 0;
+  font-family: "Releway", "Rock Salt", sans-serif;
+}
+
+.vehicle-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 10px 20px;
+}
+
+.car-details {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  color: rgb(49, 129, 236);
+  background-color: rgba(255, 255, 255, .5);
+  padding: 0 10px 0 0;
+  margin: 0 30px 0 0;
+}
+
+.car-details p:first-child {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.car-details p:nth-child(2) {
+  font-size: 1rem;
+}
