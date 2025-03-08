@@ -92,3 +92,32 @@ nav ul li {
   max-width: 100%;
   z-index: -1;
 }
+
+/********** Vehicle Reviews ************/
+
+.vehicle-reviews {
+  padding: 10px 0;
+}
+
+.vehicle-reviews h2 {
+  padding: 10px 0;
+  font-size: 1.4rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.vehicle-reviews ul li {
+  padding: 5px 0;
+  list-style: none;
+}
+
+/********** Vehicle Upgrades ************/
+
+@media only screen and (min-width: 1300px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    place-content: center;
+    justify-content: center;
+  }
+}
