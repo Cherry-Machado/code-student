@@ -184,6 +184,25 @@ nav ul li {
 
 /********** Vehicle Hub ************/
 
+.hub {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  display: grid;
+  place-content: center;
+  grid-template-rows: auto auto;
+  align-items: center;
+  text-align: center;
+  background-color: skyblue;
+}
+
+.hub img {
+  /*width: 100%;
+  height: auto;*/
+  padding: 5px 45px;
+}
+
+
+
 @media only screen and (min-width: 1300px) {
   .grid-container {
     display: grid;
