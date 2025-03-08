@@ -47,6 +47,7 @@ nav ul {
 
 nav ul li {
   margin: 0 10px;
+  color: white;
 }
 
 .welcome-title {
@@ -204,16 +205,128 @@ nav ul li {
 /********** Footer ************/
 
 .copyright {
-  padding: 20px;;
+  padding: 20px;
+  ;
 }
 
 
 @media only screen and (min-width: 1300px) {
+
+  html {
+    padding: 20px 70px;
+    background-image: url(../images/site/checkerboard.jpg);
+  }
+
+  body {
+    border: 4px solid skyblue;
+    border-radius: 1%;
+    background-color: white;
+    padding: 0 20px;
+  }
+
+  .siteName {
+    font-size: 3.5rem;
+  }
+
+  #tools {
+    font-size: 1.4rem;
+    padding: 0 10px;
+  }
+
+  nav ul {
+    padding: 20px 50px;
+  }
+
+  nav ul li {
+    font-size: 1.8rem;
+  }
+
+  /**************** body ******************/
+
   .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     place-content: center;
     justify-content: center;
+  }
+
+  .welcome-title {
+    font-size: 3.5rem;
+  }
+
+  .vehicle-info {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .car-details {
+    padding: 60px 0 0 140px;
+    line-height: 40px;
+    z-index: 2;
+  }
+
+  .car-details p:first-child {
+    font-size: 2.5rem;
+    padding-bottom: 10px;
+  }
+
+  .car-details p:nth-child(2) {
+    font-size: 2rem;
+    padding-bottom: 40px;
+  }
+
+  .today {
+    width: 220px;
+    height: 70px;
+  }
+
+  .vehicle {
+    grid-column: 1/4;
+    width: 1400px;
+    z-index: 1;
+  }
+
+  .vehicle-upgrades {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .upgrade-title {
+    font-size: 2.4rem;
+    padding: 60px 0;
+    font-weight: bolder;
+  }
+
+  .vehicle-upgrades div img {
+    width: 200px;
+  }
+
+  .vehicle-upgrades div a {
+    font-size: 1.5rem;
+  }
+
+  /**************** Vehicle Reviews ******************/
+
+  .vehicle-reviews {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  .vehicle-reviews h2 {
+    font-size: 2.4rem;
+    font-weight: bolder;
+    padding: 60px 0;
+  }
+
+  .vehicle-reviews ul li {
+    font-size: 2rem;
+    padding: 5px 0;
+    line-height: 40px;
+  }
+
+  /**************** footer ******************/
+
+  .copyright {
+    font-size: 1.5rem;
   }
 }
