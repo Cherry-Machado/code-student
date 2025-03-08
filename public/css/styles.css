@@ -8,6 +8,12 @@
   font-family: "Rubik", "Helvetica", sans-serif;
 }
 
+:root {
+  --primary-color: black;
+  --secondary-color: #10B4D5;
+  --page-background: #fff;
+}
+
 html {
   padding: 0 10px;
 }
@@ -26,7 +32,7 @@ html {
 
 .siteName a {
   text-decoration: none;
-  color: #333;
+  color: var(--primary-color);
   font-family: "Raleway", sans-serif;
 }
 
@@ -37,7 +43,7 @@ html {
 
 #tools a {
   text-decoration: none;
-  color: #333;
+  color: var(--primary-color);
   font-family: "Raleway", sans-serif;
 }
 
@@ -46,13 +52,13 @@ nav ul {
   justify-content: space-between;
   flex-direction: row;
   list-style: none;
-  background-color: #333;
+  background-color: var(--primary-color);
   padding: 20px 10px;
 }
 
 nav ul li {
   margin: 0 10px;
-  color: white;
+  color: var(--page-background);
 }
 
 .welcome-title {
@@ -70,7 +76,7 @@ nav ul li {
 .car-details {
   grid-column: 1/2;
   grid-row: 1/2;
-  color: rgb(49, 129, 236);
+  color: var(--secondary-color);
   background-color: rgba(255, 255, 255, .5);
   padding: 0 10px 0 0;
   margin: 0 30px 0 0;
@@ -110,7 +116,7 @@ nav ul li {
   padding: 10px 0;
   margin-left: -22px;
   font-size: 1.4rem;
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", "Rock Salt", sans-serif;
 }
 
 .vehicle-reviews ul li {
@@ -132,8 +138,8 @@ nav ul li {
   grid-template-rows: auto auto;
   align-items: center;
   text-align: center;
-  background-color: skyblue;
-  border: 1px solid black;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
 }
 
 .upgrade-title {
@@ -209,9 +215,9 @@ nav ul li {
   }
 
   body {
-    border: 4px solid skyblue;
+    border: 4px solid var(--secondary-color);
     border-radius: 1%;
-    background-color: white;
+    background-color: var(--page-background);
     padding: 0 20px;
   }
 
