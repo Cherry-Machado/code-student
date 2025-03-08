@@ -8,6 +8,10 @@
   font-family: "Rubik", "Helvetica", sans-serif;
 }
 
+html {
+  padding: 0 10px;
+}
+
 #top-header {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -97,18 +101,19 @@ nav ul li {
 /********** Vehicle Reviews ************/
 
 .vehicle-reviews {
-  padding: 10px 0;
+  padding: 10px 22px;
+  margin-bottom: 2rem;
 }
 
 .vehicle-reviews h2 {
   padding: 10px 0;
+  margin-left: -22px;
   font-size: 1.4rem;
   font-family: "Raleway", sans-serif;
 }
 
 .vehicle-reviews ul li {
   padding: 5px 0;
-  list-style: none;
 }
 
 /********** Vehicle Upgrades ************/
@@ -117,6 +122,16 @@ nav ul li {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
+
+}
+
+.vehicle-upgrade_container {
+  display: grid;
+  place-content: center;
+  grid-template-rows: auto auto;
+  align-items: center;
+  text-align: center;
+  background-color: skyblue
 }
 
 .upgrade-title {
@@ -131,18 +146,15 @@ nav ul li {
 .flux {
   grid-column: 1/2;
   grid-row: 2/3;
-  place-content: center;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  align-items: center;
-  text-align: center;
-  background-color: skyblue;
+
 }
 
 .flux img {
-  /*width: 100%;
-  height: auto;*/
   padding: 5px 45px;
+}
+
+.flux a {
+  text-align: center;
 }
 
 /********** Vehicle Flame ************/
@@ -150,17 +162,9 @@ nav ul li {
 .flame {
   grid-column: 2/3;
   grid-row: 2/3;
-  place-content: center;
-  display: grid;
-  grid-template-rows: auto auto;
-  align-items: center;
-  text-align: center;
-  background-color: skyblue;
 }
 
 .flame img {
-  /*width: 100%;
-  height: auto;*/
   padding: 5px 45px;
 }
 
@@ -169,17 +173,10 @@ nav ul li {
 .bumper {
   grid-column: 1/2;
   grid-row: 3/4;
-  place-content: center;
-  display: grid;
-  grid-template-rows: auto auto;
-  align-items: center;
-  text-align: center;
-  background-color: skyblue;
+
 }
 
 .bumper img {
-  /*width: 100%;
-  height: auto;*/
   padding: 5px 45px;
 }
 
@@ -188,17 +185,10 @@ nav ul li {
 .hub {
   grid-column: 2/3;
   grid-row: 3/4;
-  display: grid;
-  place-content: center;
-  grid-template-rows: auto auto;
-  align-items: center;
-  text-align: center;
-  background-color: skyblue;
+
 }
 
 .hub img {
-  /*width: 100%;
-  height: auto;*/
   padding: 5px 45px;
 }
 
@@ -206,7 +196,6 @@ nav ul li {
 
 .copyright {
   padding: 20px;
-  ;
 }
 
 
@@ -246,7 +235,7 @@ nav ul li {
   .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+    grid-gap: 4.5rem;
     place-content: center;
     justify-content: center;
   }
