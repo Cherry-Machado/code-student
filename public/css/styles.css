@@ -125,6 +125,25 @@ nav ul li {
   font-family: "Raleway", "Rock Salt", sans-serif;
 }
 
+/********** Vehicle Flux ************/
+
+.flux {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  place-content: center;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  text-align: center;
+  background-color: skyblue;
+}
+
+.flux img {
+  /*width: 100%;
+  height: auto;*/
+  padding: 5px 45px;
+}
+
 @media only screen and (min-width: 1300px) {
   .grid-container {
     display: grid;
