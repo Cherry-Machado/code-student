@@ -144,6 +144,25 @@ nav ul li {
   padding: 5px 45px;
 }
 
+/********** Vehicle Flame ************/
+
+.flame {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  place-content: center;
+  display: grid;
+  grid-template-rows: auto auto;
+  align-items: center;
+  text-align: center;
+  background-color: skyblue;
+}
+
+.flame img {
+  /*width: 100%;
+  height: auto;*/
+  padding: 5px 45px;
+}
+
 @media only screen and (min-width: 1300px) {
   .grid-container {
     display: grid;
