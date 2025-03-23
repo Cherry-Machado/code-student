@@ -4,11 +4,9 @@ const pool = require("../database/index.js");
  *  Get all classificatin data
  * ********************************** */
 async function getClassifications() {
-  const data = await pool.query(
-    /*return await pool.query(*/
+  return await pool.query(
     "SELECT * FROM public.classification ORDER BY classification_name"
   );
-  return data.rows;
 }
 
 /* ***************************
