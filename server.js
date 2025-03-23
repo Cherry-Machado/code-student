@@ -1,3 +1,16 @@
+class MyError {
+  constructor(message) {
+    this.message = message;
+    if ("captureStackTrace" in Error) {
+      // Avoid MyError itself in the stack trace
+      Error.captureStackTrace(this, MyError);
+    }
+  }
+}
+
+const myError = new MyError("Something went wrong");
+console.log(myError.stack);
+
 /* ******************************************
  * This server.js file is the primary file of the
  * application. It is used to control the project.
