@@ -53,12 +53,48 @@ nav ul {
   flex-direction: row;
   list-style: none;
   background-color: var(--primary-color);
-  padding: 20px 10px;
+  padding: 15px 10px;
 }
 
-nav ul li {
+/* nav ul li {
   margin: 0 10px;
   color: var(--page-background);
+}
+
+nav ul li:hover {
+  margin: 0 10px;
+  color: var(--secondary-color);
+} 
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5 rem;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+  color: black;
+  background-color: var(--page-background);
+  font-size: 1.5 rem;
+  padding: .5rem 1rem;
+
+}*/
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: .5rem .75rem;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+  color: black;
+  background-color: var(--page-background);
+  font-size: 1.5rem;
 }
 
 .welcome-title {
@@ -206,6 +242,38 @@ nav ul li {
   padding: 20px;
 }
 
+/*** Inventary Display by Categorys ***/
+#inv-display {
+  display: grid;
+  gap: 1em;
+  list-style: none;
+  padding: 1em;
+  justify-content: center;
+}
+
+#inv-display li img {
+  max-height: 50%;
+}
+
+#inv-display li {
+  max-width: 25em;
+  background-color: black;
+  color: white;
+  border-radius: 1.5em;
+  padding: 2em;
+  text-align: center;
+}
+
+.namePrice h2 a {
+  color: white;
+  display: block;
+  margin: 1rem;
+}
+
+.details {
+  padding: 0 1rem;
+  line-height: 2rem;
+}
 
 @media only screen and (min-width: 1300px) {
 
@@ -234,9 +302,19 @@ nav ul li {
     padding: 20px 50px;
   }
 
-  nav ul li {
-    font-size: 1.8rem;
+
+  nav ul li a {
+
+    font-size: 2rem;
+    padding: .5rem 2rem;
+
   }
+
+  nav ul li a:hover {
+
+    font-size: 2rem;
+  }
+
 
   /**************** body ******************/
 
@@ -319,6 +397,32 @@ nav ul li {
     font-size: 2rem;
     padding: 5px 0;
     line-height: 40px;
+  }
+
+  /*** Inventary Display by Categorys ***/
+
+  #inv-display {
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+  }
+
+  #inv-display li {
+    width: 25em;
+  }
+
+
+  #product-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  #inv-display li {
+    width: 25em;
+  }
+
+  .details {
+    padding: 3rem;
   }
 
   /**************** footer ******************/
