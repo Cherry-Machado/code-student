@@ -270,10 +270,7 @@ nav ul li a:hover {
   margin: 1rem;
 }
 
-.details {
-  padding: 0 1rem;
-  line-height: 2rem;
-}
+
 
 @media only screen and (min-width: 1300px) {
 
@@ -410,20 +407,10 @@ nav ul li a:hover {
     width: 25em;
   }
 
-
-  #product-display {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-  }
-
   #inv-display li {
     width: 25em;
   }
 
-  .details {
-    padding: 3rem;
-  }
 
   /**************** footer ******************/
 
