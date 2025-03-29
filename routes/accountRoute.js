@@ -5,27 +5,33 @@
 const express = require("express");
 const router = new express.Router();
 const accountController = require("../controllers/accountController");
-const util = require("../utilities");
+const utilities = require("../utilities");
 
 // Route to build Login View
-router.get("/login", util.handleErrors(accountController.buildLogin));
+router.get("/login", utilities.handleErrors(accountController.buildLogin));
 
 // Route to build registration view
-router.get("/register", util.handleErrors(accountController.buildRegister));
+router.get(
+  "/register",
+  utilities.handleErrors(accountController.buildRegister)
+);
 
 // Process Management view
 router.get(
   "/",
-  util.checkLogin,
-  util.handleErrors(accountController.buildManagement)
+  utilities.checkLogin,
+  utilities.handleErrors(accountController.buildManagement)
 );
 
 router.get(
   "/update-account/:accountId",
-  util.checkLogin,
-  util.handleErrors(accountController.buildAccountUpdate)
+  utilities.checkLogin,
+  utilities.handleErrors(accountController.buildAccountUpdate)
 );
 
-router.get("/logout", util.handleErrors(accountController.buildLogoutView));
+router.get(
+  "/logout",
+  utilities.handleErrors(accountController.buildLogoutView)
+);
 
 module.exports = router;
