@@ -6,25 +6,7 @@
 
         <!-- Flash message -->
         <%- messages() %>
-            <% if (errors) { %>
-                <ul class="notice">
-                    <% let showEmailError=false; errors.array().forEach(error=> {
-                        if (error.msg === 'A valid email is required.') {
-                        showEmailError = true;
-                        }
-                        });
-
-                        if (showEmailError) { %>
-                        <li>A valid email is required.</li>
-                        <% } else { errors.array().forEach(error=> {
-                            if (error.msg !== 'Invalid value' && error.msg !== 'A valid email is required.') { %>
-                            <li>
-                                <%= error.msg %>
-                            </li>
-                            <% } }); } %>
-                </ul>
-                <% } %>
-
+            
                     <!-- login -->
                     <form id="loginForm" action="/account/login" method="post">
                         <fieldset class="data-box">
