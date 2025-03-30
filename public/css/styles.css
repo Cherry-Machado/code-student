@@ -261,7 +261,7 @@ nav ul li a:hover {
 }
 
 /********** login page ************/
-
+#registerForm,
 #loginForm {
   background-color: aqua;
   padding: 30px 40px;
