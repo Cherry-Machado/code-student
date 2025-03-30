@@ -7,8 +7,10 @@
 <!-- Flash message -->
 <%- messages() %>
 
-    <!-- login -->
+    <!-- Registration -->
+
     <form id="loginForm" action="/account/register" method="post">
+        <p class="registerMessage">All fields are required.</p>
         <fieldset class="data-box">
             <div class="loginForm-control">
                 <label for="accountFirstName">First Name:</label>
@@ -31,5 +33,5 @@
                 letter and 1 special character</span>
 
         </fieldset>
-        <button>Register</button>
+        <button type="submit">Register</button>
     </form>
