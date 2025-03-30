@@ -293,7 +293,7 @@ nav ul li a:hover {
   font-family: inherit;
   font-size: 1.4rem;
   padding: 10px;
-  width: 100%;
+  width: 90%;
 }
 
 .loginForm-control input:focus {
@@ -311,12 +311,10 @@ nav ul li a:hover {
   font-size: 1.5rem;
   padding: 1rem;
   margin-top: 20px;
-  width: 100%;
+  width: 50%;
   margin-bottom: 10px;
   cursor: pointer;
-  /* font-size: 1rem;
-  padding: 5px;
-  margin: 10px 0; */
+
 }
 
 .data-box {
@@ -490,16 +488,17 @@ nav ul li a:hover {
 
   /****************** login page ******************/
 
-  loginForm {
+  #loginForm {
     font-size: 1.5rem;
-    width: 50%;
+    width: 40%;
   }
 
-  /* #loginForm button {
+  #loginForm button {
     font-size: 1.2rem;
     margin: 10px 0;
+    width: 40%;
   }
- */
+
   .data-box label span {
     font-size: 1.2rem;
   }
