@@ -3,7 +3,7 @@ const Util = {};
 /* ************************
  * Constructs the nav HTML unordered list
  ************************** */
-Utilities.getNav = async function (req, res, next) {
+Util.getNav = async function (req, res, next) {
   let data = await invModel.getClassifications();
   /*console.log(data);*/
   let list = "<ul>";
@@ -27,7 +27,7 @@ Utilities.getNav = async function (req, res, next) {
 /* **************************************
  * Build the classification view HTML
  * ************************************ */
-Utilities.buildClassificationGrid = async function (data) {
+Util.buildClassificationGrid = async function (data) {
   let grid;
   if (data.length > 0) {
     grid = '<ul id="inv-display">';
