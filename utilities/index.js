@@ -1,9 +1,9 @@
 const invModel = require("../models/inventory-model");
-const Util = {};
+const Utilities = {};
 /* ************************
  * Constructs the nav HTML unordered list
  ************************** */
-Util.getNav = async function (req, res, next) {
+Utilities.getNav = async function (req, res, next) {
   let data = await invModel.getClassifications();
   /*console.log(data);*/
   let list = "<ul>";
@@ -27,7 +27,7 @@ Util.getNav = async function (req, res, next) {
 /* **************************************
  * Build the classification view HTML
  * ************************************ */
-Util.buildClassificationGrid = async function (data) {
+Utilities.buildClassificationGrid = async function (data) {
   let grid;
   if (data.length > 0) {
     grid = '<ul id="inv-display">';
@@ -82,7 +82,7 @@ Util.buildClassificationGrid = async function (data) {
  * Wrap other function in this for
  * General Error Handling
  **************************************** */
-Util.handleErrors = (fn) => (req, res, next) =>
+Utilities.handleErrors = (fn) => (req, res, next) =>
   Promise.resolve(fn(req, res, next)).catch(next);
 
-module.exports = Util;
+module.exports = Utilities;
