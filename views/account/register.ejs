@@ -8,14 +8,14 @@
 <%- messages() %>
 
     <!-- login -->
-    <form id="loginForm" action="/account/login" method="post">
+    <form id="loginForm" action="/account/register" method="post">
         <fieldset class="data-box">
-            <div class="loginForm-control"></div>
-                <label for="accountFirstName">First Name</label>
+            <div class="loginForm-control">
+                <label for="accountFirstName">First Name:</label>
                 <input type="text" name="account_firstname" id="accountFirstName" required>
             </div>
             <div class="loginForm-control">
-                <label for="accountLastName">Last Name</label>
+                <label for="accountLastName">Last Name:</label>
                 <input type="text" name="account_lastname" id="accountLastName" required>
             </div>
             <div class="loginForm-control">
