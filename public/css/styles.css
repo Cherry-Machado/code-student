@@ -35,6 +35,11 @@ main>p {
   align-items: center;
 }
 
+ul.notice {
+  padding: 10px 40px;
+  color: red;
+}
+
 .siteName {
   font-size: 2rem;
   text-align: left;
@@ -255,6 +260,39 @@ nav ul li a:hover {
   margin: 1rem;
 }
 
+/********** login page ************/
+
+#loginform {
+  background-color: aqua;
+  padding: 20px;
+  font-size: 1rem;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+#loginform button {
+  font-size: 1rem;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+.data-box {
+  border: 3px solid white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.data-box label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.data-box label span {
+  display: block;
+  margin-bottom: 5px;
+  font-family: "Rock Salt", sans-serif;
+  font-size: 0.9rem;
+}
 
 
 @media only screen and (min-width: 1300px) {
@@ -269,6 +307,10 @@ nav ul li a:hover {
     border-radius: 1%;
     background-color: var(--page-background);
     padding: 0 20px;
+  }
+
+  ul.notice li {
+    font-size: 1.5rem;
   }
 
   .siteName {
@@ -401,5 +443,22 @@ nav ul li a:hover {
 
   .copyright {
     font-size: 1.5rem;
+  }
+
+  /****************** login page ******************/
+
+  #loginform {
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+    margin: 0 400px;
+   }
+
+  #loginForm button {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  .data-box label span {
+    font-size: 1.2rem;
   }
 }
