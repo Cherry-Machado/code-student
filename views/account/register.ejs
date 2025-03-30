@@ -9,22 +9,22 @@
 
     <!-- Registration -->
 
-    <form id="loginForm" action="/account/register" method="post">
+    <form id="registerForm" action="/account/register" method="post">
         <p class="registerMessage">All fields are required.</p>
         <fieldset class="data-box">
-            <div class="loginForm-control">
+            <div class="registerForm-control">
                 <label for="accountFirstName">First Name:</label>
                 <input type="text" name="account_firstname" id="accountFirstName" required>
             </div>
-            <div class="loginForm-control">
+            <div class="registerForm-control">
                 <label for="accountLastName">Last Name:</label>
                 <input type="text" name="account_lastname" id="accountLastName" required>
             </div>
-            <div class="loginForm-control">
+            <div class="registerForm-control">
                 <label for="accountEmail">Email Address:</label>
                 <input type="email" name="account_email" id="accountEmail" placeholder="youremail@mail.com" required>
             </div>
-            <div class="loginForm-control">
+            <div class="registerForm-control">
                 <label for="accountPassword">Password:</label>
                 <input type="password" name="account_password" id="accountPassword" placeholder="Password" required
                     pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">

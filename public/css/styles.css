@@ -274,18 +274,20 @@ nav ul li a:hover {
 }
 
 
-
+.registerForm-control,
 .loginForm-control {
   margin-bottom: 10px;
   padding-bottom: 1rem;
   position: relative;
 }
 
+.registerForm-control label,
 .loginForm-control label {
   display: inline-block;
   margin-bottom: 5px;
 }
 
+.registerForm-control input,
 .loginForm-control input {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
@@ -296,11 +298,13 @@ nav ul li a:hover {
   width: 90%;
 }
 
+.registerForm-control input:focus,
 .loginForm-control input:focus {
   outline: 0;
   border-color: #777;
 }
 
+#registerForm button,
 #loginForm button {
   background-color: #000000;
   border: 2px solid #ffffff;
@@ -494,11 +498,13 @@ nav ul li a:hover {
 
   /****************** login page ******************/
 
+  #registerForm,
   #loginForm {
     font-size: 1.5rem;
     width: 40%;
   }
 
+  #registerForm button,
   #loginForm button {
     font-size: 1.2rem;
     margin: 10px 0;
