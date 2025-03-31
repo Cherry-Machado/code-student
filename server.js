@@ -73,7 +73,7 @@ app.use("/account", utilities.handleErrors(accountRoute)); // Account routes
 app.use(async (req, res, next) => {
   next({
     status: 404,
-    message: "⚠ Sorry!, we appear to have lost that page.",
+    message: "Sorry!, we appear to have lost that page.",
   });
 });
 
@@ -87,7 +87,7 @@ app.use(async (err, req, res, next) => {
   if (err.status == 404) {
     message = err.message;
   } else {
-    message = "⚠ Oh no! There was a crash. Maybe try a different route?";
+    message = "Oh no! There was a crash. Maybe try a different route?";
   }
   res.render("errors/error", {
     title: err.status || "Server Error",
