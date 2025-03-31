@@ -321,6 +321,22 @@ nav ul li a:hover {
 
 }
 
+#pswdBtn {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 20px;
+  color: #000;
+  display: block;
+  font-family: inherit;
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin-top: 20px;
+  font-size: 1rem;
+  width: 10em;
+  text-align: center;
+  cursor: pointer;
+}
+
 .data-box {
   border: 3px solid white;
   padding: 10px;
