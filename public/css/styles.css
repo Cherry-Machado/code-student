@@ -309,6 +309,7 @@ nav ul li a:hover {
   background-image: url(/images/site/invalid.png);
   background-position: right top;
   background-repeat: no-repeat;
+  background-color: coral;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -317,6 +318,7 @@ nav ul li a:hover {
 .registerForm-control input:required:valid,
 .loginForm-control input:required:valid {
   background-image: url(/images/site/valid.png);
+  background-color: #fff;
   background-position: right top;
   background-repeat: no-repeat;
 }
@@ -373,7 +375,8 @@ nav ul li a:hover {
   font-size: 0.9rem;
 }
 
-.registerMessage, .loginMessage {
+.registerMessage,
+.loginMessage {
   text-align: center;
   color: black;
   font-size: 1.1rem;
