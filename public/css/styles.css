@@ -304,6 +304,23 @@ nav ul li a:hover {
   border-color: #777;
 }
 
+.registerForm-control input:required:invalid,
+.loginForm-control input:focus:invalid {
+  background-image: url(/images/site/invalid.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.registerForm-control input:required:valid,
+.loginForm-control input:required:valid {
+  background-image: url(/images/site/valid.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+
 #registerForm button,
 #loginForm button {
   background-color: #000000;
@@ -321,21 +338,6 @@ nav ul li a:hover {
 
 }
 
-input:required:invalid,
-input:focus:invalid {
-  background-image: url(/public/images/site/invalid.png);
-  background-position: right top;
-  background-repeat: no-repeat;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-
-input:required:valid {
-  background-image: url(/public/images/site/valid.png);
-  background-position: right top;
-  background-repeat: no-repeat;
-}
 
 #pswdBtn {
   background-color: #fff;
@@ -371,7 +373,7 @@ input:required:valid {
   font-size: 0.9rem;
 }
 
-.registerMessage {
+.registerMessage, .loginMessage {
   text-align: center;
   color: black;
   font-size: 1.1rem;
