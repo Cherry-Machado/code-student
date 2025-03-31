@@ -326,7 +326,11 @@ input:focus:invalid {
   background-image: url(/public/images/site/invalid.png);
   background-position: right top;
   background-repeat: no-repeat;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
+
 input:required:valid {
   background-image: url(/public/images/site/valid.png);
   background-position: right top;
