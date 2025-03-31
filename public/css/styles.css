@@ -309,7 +309,7 @@ nav ul li a:hover {
   background-image: url(/images/site/invalid.png);
   background-position: right top;
   background-repeat: no-repeat;
-  background-color: coral;
+  background-color: rgb(230, 185, 169);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
