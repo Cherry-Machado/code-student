@@ -304,12 +304,13 @@ nav ul li a:hover {
   border-color: #777;
 }
 
-.registerForm-control input:required:invalid,
+/*.registerForm-control input:required:invalid,*/
+.registerForm-control input:focus:invalid,
 .loginForm-control input:focus:invalid {
   background-image: url(/images/site/invalid.png);
   background-position: right top;
   background-repeat: no-repeat;
-  background-color: rgb(230, 185, 169);
+  background-color: rgb(230, 219, 215);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
