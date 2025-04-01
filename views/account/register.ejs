@@ -31,13 +31,12 @@
                     <div class="registerForm-control">
                         <label for="accountEmail">Email Address:</label>
                         <input type="email" name="account_email" id="accountEmail"
-                            placeholder="Enter a valid email address" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
-                            required value="<%= locals.account_email %>">
+                            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required value="<%= locals.account_email %>">
                     </div>
                     <div class="registerForm-control">
                         <label for="accountPassword">Password:</label>
-                        <input type="password" name="account_password" id="accountPassword" placeholder="Password"
-                            required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
+                        <input type="password" name="account_password" id="accountPassword" required
+                            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
                         <span id="pswdBtn">Show Password</span>
                     </div>
                     <span>Passwords must be at least 12 characters and contain at least 1 number, 1 capital
