@@ -1,22 +1,32 @@
 <!-- Content Heading -->
-<% if (title) { %>
-    <h1><%= title %></h1>
-    <% } else {
-      res.redirect('/')
-} %>
+<h1><%- title %></h1>
 
 <!-- Message Block -->
 <%- messages() %>
+    <% if (errors) { %>
+        <ul class="notice">
+            <% errors.array().forEach(error=> { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
 
-<a href="/inv/add-classification" class="button-add">Add New Classification</a>
-<a href="/inv/add-inventory" class="button-add">Add New Inventory</a>
+            <ul class="sinpuntos">
+                <li>
+                    <a href="/inv/add-classification">Add New Classification</a>
+                </li>
+                <li>
+                    <a href="/inv/add-inventory">Add New Vehicle</a>
+                </li>
+            </ul>
+            <h2>Manage Inventory</h2>
+            <div class="input-box">
+                <p>Select a classification from the list to see the items belonging to the classification.</p>
+                <%- classificationSelect %>
+                    <table id="inventoryDisplay"></table>
+            </div>
 
-<div class="manageInv">
-  <h2>Manage Inventory</h2>
-  <p>Choose a classification to see those inventory items.</p>
-  <%- classificationSelect %>
-  <table id="inventoryDisplay"></table>
-</div>
-
-<noscript>JavaScript must be enabled to use this page.</noscript>
-<script src="../../js/inventory.js"></script>
+            <noscript>JavaScript must be enabled to use this page.</noscript>
+            <script src="../../js/inventory.js"></script>

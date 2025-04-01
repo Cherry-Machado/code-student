@@ -11,6 +11,8 @@
 :root {
   --primary-color: black;
   --secondary-color: #10B4D5;
+  --secondary-front-color: rgb(193, 239, 237);
+  --secondary-back-color: rgb(89, 10, 124);
   --page-background: #fff;
 }
 
@@ -85,6 +87,12 @@ nav ul li a:hover {
   color: black;
   background-color: var(--page-background);
   font-size: 1.5rem;
+}
+
+.sinpuntos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .welcome-title {
