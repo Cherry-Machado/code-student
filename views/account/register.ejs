@@ -20,17 +20,19 @@
                 <fieldset class="data-box">
                     <div class="registerForm-control">
                         <label for="accountFirstName">First Name:</label>
-                        <input type="text" name="account_firstname" id="accountFirstName" required>
+                        <input type="text" name="account_firstname" id="accountFirstName" required
+                            value="<%= locals.account_firstname %>">
                     </div>
                     <div class="registerForm-control">
                         <label for="accountLastName">Last Name:</label>
-                        <input type="text" name="account_lastname" id="accountLastName" required>
+                        <input type="text" name="account_lastname" id="accountLastName" required
+                            value="<%= locals.account_lastname %>">
                     </div>
                     <div class="registerForm-control">
                         <label for="accountEmail">Email Address:</label>
                         <input type="email" name="account_email" id="accountEmail"
                             placeholder="Enter a valid email address" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
-                            required>
+                            required value="<%= locals.account_email %>">
                     </div>
                     <div class="registerForm-control">
                         <label for="accountPassword">Password:</label>
