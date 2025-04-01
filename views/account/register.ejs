@@ -31,11 +31,13 @@
                     <div class="registerForm-control">
                         <label for="accountEmail">Email Address:</label>
                         <input type="email" name="account_email" id="accountEmail"
-                            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required value="<%= locals.account_email %>">
+                            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required
+                            placeholder="Enter a valid email address" value="<%= locals.account_email %>">
                     </div>
                     <div class="registerForm-control">
                         <label for="accountPassword">Password:</label>
                         <input type="password" name="account_password" id="accountPassword" required
+                            placeholder="Password"
                             pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
                         <span id="pswdBtn">Show Password</span>
                     </div>
