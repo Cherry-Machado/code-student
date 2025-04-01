@@ -1,4 +1,4 @@
-const utilities = require(".");
+const utilities = require("../utilities");
 const { body, validationResult } = require("express-validator");
 const validate = {};
 const accountModel = require("../models/account-model");
@@ -42,19 +42,6 @@ validate.registationRules = () => {
           throw new Error("Email exists. Please log in or use different email");
         }
       }),
-
-    // password is required and must be strong password
-    body("account_password")
-      .trim()
-      .notEmpty()
-      .isStrongPassword({
-        minLength: 12,
-        minLowercase: 1,
-        minUppercase: 1,
-        minNumbers: 1,
-        minSymbols: 1,
-      })
-      .withMessage("Password does not meet requirements."),
   ];
 };
 
@@ -101,6 +88,19 @@ validate.loginRules = () => {
           );
         }
       }),
+
+    // password is required and must be strong password
+    body("account_password")
+      .trim()
+      .notEmpty()
+      .isStrongPassword({
+        minLength: 12,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1,
+        minSymbols: 1,
+      })
+      .withMessage("Password does not meet requirements."),   
   ];
 };
 

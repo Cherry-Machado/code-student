@@ -67,7 +67,7 @@ app.get("/", utilities.handleErrors(baseController.buildHome));
 app.use("/inv", inventoryRoute);
 
 // Account routes
-app.use("/account", utilities.handleErrors(accountRoute)); // Account routes
+app.use("/account", accountRoute); // Account routes
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
