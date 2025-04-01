@@ -1,6 +1,13 @@
 const pool = require("../database/");
 
 /* *****************************
+*   Get all accounts (SELECT)
+* *************************** */
+async function getAccounts() {
+  return await pool.query("SELECT * FROM public.account ORDER BY account_email")
+}
+
+/* *****************************
  *   Register new account
  * *************************** */
 async function registerAccount(
