@@ -100,8 +100,8 @@ async function accountLogin(req, res) {
   try {
     if (await bcrypt.compare(account_password, accountData.account_password)) {
       delete accountData.account_password;
-     //Faltalagalleoreo
-     
+      //Faltalagalleoreo
+
       return res.redirect("/account/");
     } // Need to have a wrong password option
     else {
