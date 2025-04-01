@@ -80,4 +80,36 @@ async function registerAccount(req, res) {
   }
 }
 
-module.exports = { buildLogin, buildRegister, registerAccount };
+/* ****************************************
+ *  Process login post request
+ * ************************************ */
+async function accountLogin(req, res) {
+  let nav = await utilities.getNav();
+  const { account_email, account_password } = req.body;
+  const accountData = await accountModel.getAccountByEmail(account_email);
+  if (!accountData) {
+    req.flash("notice", "Please check your credentials and try again.");
+    res.status(400).render("account/login", {
+      title: "Login",
+      nav,
+      errors: null,
+      account_email,
+    });
+    return;
+  }
+  try {
+    if (await bcrypt.compare(account_password, accountData.account_password)) {
+      delete accountData.account_password;
+     //Faltalagalleoreo
+     
+      return res.redirect("/account/");
+    } // Need to have a wrong password option
+    else {
+      req.flash("notice", "Please check your credentials and try again."); // Login was hanging with bad password but correct id
+      res.redirect("/account/");
+    }
+  } catch (error) {
+    return new Error("Access Forbidden");
+  }
+}
+module.exports = { buildLogin, buildRegister, registerAccount, accountLogin };
