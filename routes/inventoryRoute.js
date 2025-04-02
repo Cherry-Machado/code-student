@@ -15,4 +15,7 @@ router.get("/", utilities.checkAuthorizationManager ,utilities.handleErrors(invC
 router.get("/add-classification", utilities.handleErrors(invController.buildAddClassification));
 router.post("/add-classification", invValidate.classificationRules(), invValidate.checkClassificationData, utilities.handleErrors(invController.addClassification)); 
 
+// Inventory management routes
+router.get("/add-inventory", utilities.handleErrors(invController.buildAddInventory));
+router.post("/add-inventory", invValidate.inventoryRules(), invValidate.checkInventoryData, utilities.handleErrors(invController.addInventory));
 module.exports = router;
