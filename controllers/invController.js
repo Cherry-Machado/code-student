@@ -94,7 +94,7 @@ invCont.buildAddInventory = async function (req, res, next) {
 };
 
 /***********************************************
- * Controller for adding inventory vehicles: 
+ * Controller for adding inventory vehicles:
  * Processes POST data and manages redirect logic
  ***********************************************/
 invCont.addInventory = async function (req, res, next) {
@@ -131,7 +131,9 @@ invCont.addInventory = async function (req, res, next) {
       "notice",
       `The ${inv_year} ${inv_make} ${inv_model} successfully added.`
     );
-    const classificationSelect = await utilities.buildClassificationList(classification_id);
+    const classificationSelect = await utilities.buildClassificationList(
+      classification_id
+    );
     res.render("inventory/management", {
       title: "Vehicle Management",
       nav,
@@ -141,7 +143,7 @@ invCont.addInventory = async function (req, res, next) {
   } else {
     // This seems to never get called. Is this just for DB errors?
     req.flash("notice", "There was a problem.");
-    res.render("inventory/addInventory", {
+    res.render("inventory/add-inventory", {
       title: "Add Vehicle",
       nav,
       errors: null,
