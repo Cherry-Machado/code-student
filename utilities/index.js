@@ -113,4 +113,36 @@ Util.buildClassificationList = async function (classification_id = null) {
   return classificationList;
 };
 
+/* ****************************************
+ *  Creating Check authorization Manager
+ * ************************************ */
+Util.checkAuthorizationManager = (req, res, next) => {
+  if (req.cookies.jwt) {
+    jwt.verify(
+      req.cookies.jwt,
+      process.env.ACCESS_TOKEN_SECRET,
+      function (err, accountData) {
+        if (err) {
+          req.flash("Please log in");
+          res.clearCookie("jwt");
+          return res.redirect("/account/login");
+        }
+        if (
+          accountData.account_type == "Employee" ||
+          accountData.account_type == "Admin"
+        ) {
+          next();
+        } else {
+          req.flash("notice", "You are not authorized to modify inventory.");
+          return res.redirect("/account/login");
+        }
+      }
+    );
+  } else {
+    req.flash("notice", "You are not authorized to modify inventory.");
+    return res.redirect("/account/login");
+  }
+};
+
+
 module.exports = Util;
