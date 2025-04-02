@@ -50,14 +50,14 @@ invCont.buildAddClassification = async function (req, res, next) {
 };
 
 /**********************************
- * Controller function to add a vehicle 
+ * Controller function to add a vehicle
  * classification through a POST request.
  **********************************/
 invCont.addClassification = async function (req, res, next) {
   const { classification_name } = req.body;
 
-  const response = await invModel.addClassification(classification_name); // ...to a function within the inventory model...
-  let nav = await utilities.getNav(); // After query, so it shows new classification
+  const response = await invModel.addClassification(classification_name);
+  let nav = await utilities.getNav();
   if (response) {
     req.flash(
       "notice",
