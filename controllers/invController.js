@@ -71,7 +71,7 @@ invCont.addClassification = async function (req, res, next) {
     });
   } else {
     req.flash("notice", `Failed to add ${classification_name}`);
-    res.render("inventory/addClassification", {
+    res.render("inventory/add-classification", {
       title: "Add New Classification",
       errors: null,
       nav,
