@@ -7,7 +7,7 @@ const invCont = {};
  *  Build inventory by classification view
  * ************************** */
 invCont.buildByClassificationId = async function (req, res, next) {
-  const classification_id = req.params.classification_id;
+  const classification_id = req.params.classificationId;
   const data = await invModel.getInventoryByClassificationId(classification_id);
 
   let grid;
@@ -168,7 +168,7 @@ invCont.addInventory = async function (req, res, next) {
  *  Return Inventory by Classification As JSON
  * ************************** */
 invCont.getInventoryJSON = async (req, res, next) => {
-  const classification_id = parseInt(req.params.classification_id);
+  const classification_id = parseInt(req.params.classificationId);
   const invData = await invModel.getInventoryByClassificationId(
     classification_id
   );
