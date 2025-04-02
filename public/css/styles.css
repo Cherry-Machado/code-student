@@ -407,22 +407,34 @@ nav ul li a:hover {
   max-width: 500px;
   align-self: center;
 }
+
 .input-box label {
   display: flex;
   flex-direction: column;
   gap: .5rem;
   position: relative;
 }
-.input-box input, .input-box select, .input-box textarea, #classificationList {
+
+.input-box input,
+.input-box select,
+.input-box textarea,
+#classificationList {
   padding: .5rem;
   border: none;
 }
-.input-box input::placeholder, .input-box select::placeholder, .input-box textarea::placeholder {
+
+.input-box input::placeholder,
+.input-box select::placeholder,
+.input-box textarea::placeholder {
   color: rgba(0, 0, 0, 0.27)
 }
-.input-box input:invalid, .input-box textarea:invalid, .input-box select:invalid {
+
+.input-box input:invalid,
+.input-box textarea:invalid,
+.input-box select:invalid {
   border-right: 5px solid red;
 }
+
 .input-box input[type="submit"] {
   font-size: 1rem;
   padding-left: 2rem;
@@ -435,8 +447,10 @@ nav ul li a:hover {
   border-radius: .5rem;
   box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.368);
 }
+
 .input-box .reveal-button {
-  color: transparent; /* To make wave happy */
+  color: transparent;
+  /* To make wave happy */
   position: absolute;
   bottom: 0;
   right: 5px;
@@ -447,9 +461,11 @@ nav ul li a:hover {
   width: 2rem;
   border: 0;
 }
+
 .input-box .reveal-button.active {
   background-image: url("/images/site/eye_closed.svg");
 }
+
 .fine-print {
   font-size: .75em;
 }
@@ -459,10 +475,12 @@ nav ul li a:hover {
 #inventoryDisplay tr td:nth-child(1) {
   width: auto;
 }
+
 #inventoryDisplay tr td:nth-child(2) {
   width: 75px;
   text-align: end;
 }
+
 #inventoryDisplay tr td:nth-child(3) {
   width: 75px;
   text-align: end;
