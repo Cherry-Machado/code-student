@@ -1,7 +1,5 @@
 const invModel = require("../models/inventory-model");
 const Util = {};
-const jwt = require("jsonwebtoken");
-require("dotenv").config();
 
 /* ************************
  * Constructs the nav HTML unordered list
@@ -113,49 +111,6 @@ Util.buildClassificationList = async function (classification_id = null) {
 };
 
 /* ****************************************
- * Used explicity like a Middleware
- * to check token validity.
- **************************************** */
-Util.checkJWTToken = (req, res, next) => {
-  if (req.cookies.jwt) {
-    jwt.verify(
-      req.cookies.jwt,
-      process.env.ACCESS_TOKEN_SECRET,
-      function (err, accountData) {
-        if (err) {
-          req.flash("Please log in");
-          res.clearCookie("jwt");
-          return res.redirect("/account/login");
-        }
-        res.locals.accountData = accountData;
-        res.locals.loggedin = 1;
-        next();
-      }
-    );
-  } else {
-    next();
-  }
-};
-
-/* ****************************************
- *  Upadating browser cookie
- * ************************************ */
-Util.updateCookie = (accountData, res) => {
-  const accessToken = jwt.sign(accountData, process.env.ACCESS_TOKEN_SECRET, {
-    expiresIn: 5400,
-  });
-  if (process.env.NODE_ENV === "development") {
-    res.cookie("jwt", accessToken, { httpOnly: true, maxAge: 5400 * 1000 });
-  } else {
-    res.cookie("jwt", accessToken, {
-      httpOnly: true,
-      secure: true,
-      maxAge: 5400 * 1000,
-    });
-  }
-};
-
-/* ****************************************
  *  Checking the Login.
  * ************************************ */
 Util.checkLogin = (req, res, next) => {
@@ -163,37 +118,6 @@ Util.checkLogin = (req, res, next) => {
     next();
   } else {
     req.flash("notice", "Please log in.");
-    return res.redirect("/account/login");
-  }
-};
-
-/* ****************************************
- *  Creating Check authorization Manager
- * ************************************ */
-Util.checkAuthorizationManager = (req, res, next) => {
-  if (req.cookies.jwt) {
-    jwt.verify(
-      req.cookies.jwt,
-      process.env.ACCESS_TOKEN_SECRET,
-      function (err, accountData) {
-        if (err) {
-          req.flash("Please log in");
-          res.clearCookie("jwt");
-          return res.redirect("/account/login");
-        }
-        if (
-          accountData.account_type == "Employee" ||
-          accountData.account_type == "Admin"
-        ) {
-          next();
-        } else {
-          req.flash("notice", "You are not authorized to modify inventory.");
-          return res.redirect("/account/login");
-        }
-      }
-    );
-  } else {
-    req.flash("notice", "You are not authorized to modify inventory.");
     return res.redirect("/account/login");
   }
 };

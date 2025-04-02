@@ -10,6 +10,7 @@ router.use(["/add-classification", "/add-inventory"], utilities.checkLogin);
 // Route to build Managementinventory Inventory
 router.get(
   "/",
+  utilities.checkLogin,
   utilities.checkAuthorizationManager,
   utilities.handleErrors(invController.buildManagementView)
 );
@@ -37,7 +38,10 @@ router.post(
   invValidate.checkInventoryData,
   utilities.handleErrors(invController.addInventory)
 );
-module.exports = router;
 
 // Route to build inventory by classification view
 router.get("/type/:classificationId", invController.buildByClassificationId);
+
+module.exports = router;
+
+
