@@ -153,7 +153,7 @@ validate.checkInventoryData = async (req, res, next) => {
       classification_id
     );
     let nav = await utilities.getNav();
-    res.render("inventory/addInventory", {
+    res.render("inventory/add-inventory", {
       // Try again
       errors,
       title: "Add Inventory",
