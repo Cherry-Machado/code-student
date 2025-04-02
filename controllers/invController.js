@@ -80,12 +80,12 @@ invCont.addClassification = async function (req, res, next) {
   }
 };
 
- /* Build the add inventory view */
- invCont.buildAddInventory = async function (req, res, next) {
+/* Build the add inventory view */
+invCont.buildAddInventory = async function (req, res, next) {
   const nav = await utilities.getNav();
   let classifications = await utilities.buildClassificationList();
 
-  res.render("inventory/addInventory", {
+  res.render("inventory/add-inventory", {
     title: "Add Vehicle",
     errors: null,
     nav,
@@ -93,5 +93,60 @@ invCont.addClassification = async function (req, res, next) {
   });
 };
 
+/***********************************************
+ * Controller for adding inventory vehicles: 
+ * Processes POST data and manages redirect logic
+ ***********************************************/
+invCont.addInventory = async function (req, res, next) {
+  const nav = await utilities.getNav();
+
+  const {
+    inv_make,
+    inv_model,
+    inv_year,
+    inv_description,
+    inv_image,
+    inv_thumbnail,
+    inv_price,
+    inv_miles,
+    inv_color,
+    classification_id,
+  } = req.body;
+
+  const response = await invModel.addInventory(
+    inv_make,
+    inv_model,
+    inv_year,
+    inv_description,
+    inv_image,
+    inv_thumbnail,
+    inv_price,
+    inv_miles,
+    inv_color,
+    classification_id
+  );
+
+  if (response) {
+    req.flash(
+      "notice",
+      `The ${inv_year} ${inv_make} ${inv_model} successfully added.`
+    );
+    const classificationSelect = await utilities.buildClassificationList(classification_id);
+    res.render("inventory/management", {
+      title: "Vehicle Management",
+      nav,
+      classificationSelect,
+      errors: null,
+    });
+  } else {
+    // This seems to never get called. Is this just for DB errors?
+    req.flash("notice", "There was a problem.");
+    res.render("inventory/addInventory", {
+      title: "Add Vehicle",
+      nav,
+      errors: null,
+    });
+  }
+};
 
 module.exports = invCont;
