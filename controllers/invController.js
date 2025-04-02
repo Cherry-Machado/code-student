@@ -49,4 +49,35 @@ invCont.buildAddClassification = async function (req, res, next) {
   });
 };
 
+/**********************************
+ * Controller function to add a vehicle 
+ * classification through a POST request.
+ **********************************/
+invCont.addClassification = async function (req, res, next) {
+  const { classification_name } = req.body;
+
+  const response = await invModel.addClassification(classification_name); // ...to a function within the inventory model...
+  let nav = await utilities.getNav(); // After query, so it shows new classification
+  if (response) {
+    req.flash(
+      "notice",
+      `The "${classification_name}" classification was successfully added.`
+    );
+    res.render("inventory/management", {
+      title: "Vehicle Management",
+      errors: null,
+      nav,
+      classification_name,
+    });
+  } else {
+    req.flash("notice", `Failed to add ${classification_name}`);
+    res.render("inventory/addClassification", {
+      title: "Add New Classification",
+      errors: null,
+      nav,
+      classification_name,
+    });
+  }
+};
+
 module.exports = invCont;
