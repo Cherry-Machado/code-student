@@ -56,7 +56,7 @@ validate.inventoryRules = () => {
       .notEmpty()
       .withMessage("Make value is missing")
       .isLength({ min: 1 })
-      .withMessage("Please provide a make."), 
+      .withMessage("Please provide a make."),
 
     body("inv_model")
       .trim()
@@ -125,6 +125,53 @@ validate.inventoryRules = () => {
       .isInt()
       .withMessage("Please provide a make."),
   ];
+};
+
+/* ******************************
+ * Thisfunctions is to check data
+ * and return errors and if all is
+ * well, then continue to registration.
+ * ***************************** */
+validate.checkInventoryData = async (req, res, next) => {
+  let errors = [];
+  errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const {
+      inv_make,
+      inv_model,
+      inv_year,
+      inv_description,
+      inv_image,
+      inv_thumbnail,
+      inv_price,
+      inv_miles,
+      inv_color,
+      classification_id,
+    } = req.body;
+    let classifications = await utilities.buildClassificationList(
+      classification_id
+    );
+    let nav = await utilities.getNav();
+    res.render("inventory/addInventory", {
+      // Try again
+      errors,
+      title: "Add Inventory",
+      nav,
+      classifications,
+      inv_make,
+      inv_model,
+      inv_year,
+      inv_description,
+      inv_image,
+      inv_thumbnail,
+      inv_price,
+      inv_miles,
+      inv_color,
+    });
+    return;
+  }
+  next();
 };
 
 module.exports = validate;
