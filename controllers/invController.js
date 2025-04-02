@@ -20,4 +20,21 @@ invCont.buildByClassificationId = async function (req, res, next) {
   });
 };
 
+/**********************************
+ * Vehicle Management Controllers
+ **********************************/
+
+/**
+ * Build the main vehicle management view */
+invCont.buildManagementView = async function (req, res, next) {
+  let nav = await utilities.getNav();
+  const classificationSelect = await utilities.buildClassificationList();
+  res.render("inventory/management", {
+    title: "Vehicle Management",
+    errors: null,
+    nav,
+    classificationSelect,
+  });
+};
+
 module.exports = invCont;
