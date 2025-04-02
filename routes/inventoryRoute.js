@@ -7,4 +7,9 @@ const utilities = require("../utilities");
 // Route to build inventory by classification view
 router.get("/type/:classificationId", invController.buildByClassificationId);
 
+// Route to build inventory by classification view
+router.get("/", utilities.checkAuthorizationManager ,utilities.handleErrors(invController.buildManagementView));
+router.get("/type/:classificationId", utilities.handleErrors(invController.buildByClassificationId));
+router.get("/detail/:inventoryId", utilities.handleErrors(invController.buildByInventoryId));
+
 module.exports = router;
