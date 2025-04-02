@@ -40,4 +40,9 @@ router.post(
   utilities.handleErrors(invController.addInventory)
 );
 
+// AJAX inventory api call route
+router.get(
+  "/getInventory/:classification_id",
+  utilities.handleErrors(invController.getInventoryJSON)
+);
 module.exports = router;
