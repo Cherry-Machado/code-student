@@ -88,12 +88,11 @@ Util.buildClassificationGrid = async function (data) {
 Util.handleErrors = (fn) => (req, res, next) =>
   Promise.resolve(fn(req, res, next)).catch(next);
 
-
 /* ****************************************
  * Build an HTML select element with
  * Wclassification data
  **************************************** */
- 
+
 Util.buildClassificationList = async function (classification_id = null) {
   let data = await invModel.getClassifications();
   let classificationList =
@@ -111,6 +110,61 @@ Util.buildClassificationList = async function (classification_id = null) {
   });
   classificationList += "</select>";
   return classificationList;
+};
+
+/* ****************************************
+ * Used explicity like a Middleware
+ * to check token validity.
+ **************************************** */
+Util.checkJWTToken = (req, res, next) => {
+  if (req.cookies.jwt) {
+    jwt.verify(
+      req.cookies.jwt,
+      process.env.ACCESS_TOKEN_SECRET,
+      function (err, accountData) {
+        if (err) {
+          req.flash("Please log in");
+          res.clearCookie("jwt");
+          return res.redirect("/account/login");
+        }
+        res.locals.accountData = accountData;
+        res.locals.loggedin = 1;
+        next();
+      }
+    );
+  } else {
+    next();
+  }
+};
+
+/* ****************************************
+ *  Upadating browser cookie
+ * ************************************ */
+Util.updateCookie = (accountData, res) => {
+  const accessToken = jwt.sign(accountData, process.env.ACCESS_TOKEN_SECRET, {
+    expiresIn: 5400,
+  });
+  if (process.env.NODE_ENV === "development") {
+    res.cookie("jwt", accessToken, { httpOnly: true, maxAge: 5400 * 1000 });
+  } else {
+    res.cookie("jwt", accessToken, {
+      httpOnly: true,
+      secure: true,
+      maxAge: 5400 * 1000,
+    });
+  }
+};
+
+/* ****************************************
+ *  Checking the Login.
+ * ************************************ */
+Util.checkLogin = (req, res, next) => {
+  if (res.locals.loggedin) {
+    next();
+  } else {
+    req.flash("notice", "Please log in.");
+    return res.redirect("/account/login");
+  }
 };
 
 /* ****************************************
@@ -143,6 +197,5 @@ Util.checkAuthorizationManager = (req, res, next) => {
     return res.redirect("/account/login");
   }
 };
-
 
 module.exports = Util;
