@@ -353,7 +353,7 @@ nav ul li a:hover {
 .addinventoryForm-control input:required:valid,
 .addinventoryForm-control textarea:required:valid {
   background-image: url(/images/site/valid.png);
-  background-color: #fff;
+  background-color: #b2f9ae;
   background-position: right top;
   background-repeat: no-repeat;
 }
