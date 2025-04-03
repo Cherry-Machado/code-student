@@ -91,8 +91,15 @@ nav ul li a:hover {
 
 .sinpuntos {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  font-size: 1.5rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.sinpuntos li {
+  margin-left: 3rem;
+  padding: .5rem;
+  color: var(--secondary-back-color);
+  font-family: "Raleway", sans-serif;
 }
 
 .welcome-title {
@@ -270,7 +277,8 @@ nav ul li a:hover {
 
 /********** login page ************/
 #registerForm,
-#loginForm {
+#loginForm,
+#classificationForm {
   background-color: aqua;
   padding: 30px 40px;
   font-family: inherit;
@@ -283,20 +291,23 @@ nav ul li a:hover {
 
 
 .registerForm-control,
-.loginForm-control {
+.loginForm-control,
+.classificationForm-control {
   margin-bottom: 10px;
   padding-bottom: 1rem;
   position: relative;
 }
 
 .registerForm-control label,
-.loginForm-control label {
+.loginForm-control label,
+.classificationForm-control label {
   display: inline-block;
   margin-bottom: 5px;
 }
 
 .registerForm-control input,
-.loginForm-control input {
+.loginForm-control input,
+.classificationForm-control input {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
   display: block;
@@ -307,14 +318,16 @@ nav ul li a:hover {
 }
 
 .registerForm-control input:focus,
-.loginForm-control input:focus {
+.loginForm-control input:focus,
+.classificationForm-control input:focus {
   outline: 0;
   border-color: #777;
 }
 
 /*.registerForm-control input:required:invalid,*/
 .registerForm-control input:focus:invalid,
-.loginForm-control input:focus:invalid {
+.loginForm-control input:focus:invalid,
+.classificationForm-control input:focus:invalid {
   background-image: url(/images/site/invalid.png);
   background-position: right top;
   background-repeat: no-repeat;
@@ -325,7 +338,8 @@ nav ul li a:hover {
 }
 
 .registerForm-control input:required:valid,
-.loginForm-control input:required:valid {
+.loginForm-control input:required:valid,
+.classificationForm-control input:required:valid {
   background-image: url(/images/site/valid.png);
   background-color: #fff;
   background-position: right top;
@@ -333,7 +347,8 @@ nav ul li a:hover {
 }
 
 #registerForm button,
-#loginForm button {
+#loginForm button,
+#classificationForm button {
   background-color: #000000;
   border: 2px solid #ffffff;
   border-radius: 20px;
@@ -349,6 +364,32 @@ nav ul li a:hover {
 
 }
 
+#classificationForm p {
+  text-align: center;
+}
+
+.classificationFieldset {
+  position: relative;
+  border: 1px solid var(--page-background);
+  border-radius: 2px;
+  padding: 1rem;
+  margin-top: 10px;
+}
+
+.classificationFieldset input {
+  margin-top: 10px;
+}
+
+.classificationFieldset label {
+  font-weight: bold;
+}
+
+
+.classificationsubmessage {
+  font-style: italic;
+  font-size: 1rem;
+  padding: 1rem 0;
+}
 
 #pswdBtn {
   background-color: #fff;
@@ -639,13 +680,15 @@ nav ul li a:hover {
   /****************** login page ******************/
 
   #registerForm,
-  #loginForm {
+  #loginForm,
+  #classificationForm {
     font-size: 1.5rem;
     width: 40%;
   }
 
   #registerForm button,
-  #loginForm button {
+  #loginForm button,
+  #classificationForm button {
     font-size: 1.2rem;
     margin: 10px 0;
     width: 40%;

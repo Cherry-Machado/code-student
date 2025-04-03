@@ -10,11 +10,14 @@
         </ul>
         <% } %>
 
-            <form class="input-box" action="/inv/add-classification" method="post">
-                <p class="registerMessage">All fields are required.</p>
+            <form id="classificationForm" class="classificationForm-control" method="post">
+                <p>All fields are required.</p>
                 <%# All data should be sent by the form action... %>
-                    <label>CLASSIFICATION NAME<input type="text" name="classification_name" required
-                            value="<%= locals.classification_name %>" pattern="[0-9a-zA-Z]+"></label>
-                    <span class="fine-print">NAME MUST BE ALPHABETIC CHARACTERS ONLY</span>
-                    <input type="submit" value="Add Classification">
+                    <fieldset class="classificationFieldset">
+                        <label for="classification_name">CLASSIFICATION NAME</label><br>
+                        <span class="classificationsubmessage">NAME MUST BE ALPHABETIC CHARACTERS ONLY</span><br>
+                        <input type="text" id="classification_name" name="classification_name" required
+                            pattern="[0-9a-zA-Z]+" value="<%= locals.classification_name %>">
+                        <button type="submit">Add Classification</button>
+                    </fieldset>
             </form>
