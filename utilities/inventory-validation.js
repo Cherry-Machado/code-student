@@ -167,6 +167,7 @@ validate.checkInventoryData = async (req, res, next) => {
       inv_price,
       inv_miles,
       inv_color,
+      classification_id,
     });
     return;
   }
