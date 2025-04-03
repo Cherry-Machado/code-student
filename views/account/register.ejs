@@ -1,7 +1,5 @@
 <!-- Content Heading -->
-<h1>
-    <%= title %>
-</h1>
+<h1><%- title %></h1>
 <!-- Flash message -->
 <%- messages() %>
     <% if (errors) { %>
@@ -14,30 +12,29 @@
         </ul>
         <% } %>
             <!-- Registration -->
-
             <form id="registerForm" action="/account/register" method="post">
                 <p class="registerMessage">All fields are required.</p>
                 <fieldset class="data-box">
                     <div class="registerForm-control">
                         <label for="accountFirstName">First Name:</label>
                         <input type="text" name="account_firstname" id="accountFirstName" required
-                            value="<%= locals.account_firstname %>">
+                            autocomplete="given-name" value="<%= locals.account_firstname %>">
                     </div>
                     <div class="registerForm-control">
                         <label for="accountLastName">Last Name:</label>
                         <input type="text" name="account_lastname" id="accountLastName" required
-                            value="<%= locals.account_lastname %>">
+                            autocomplete="family-name" value="<%= locals.account_lastname %>">
                     </div>
                     <div class="registerForm-control">
                         <label for="accountEmail">Email Address:</label>
                         <input type="email" name="account_email" id="accountEmail"
-                            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required
+                            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required autocomplete="email"
                             placeholder="Enter a valid email address" value="<%= locals.account_email %>">
                     </div>
                     <div class="registerForm-control">
                         <label for="accountPassword">Password:</label>
                         <input type="password" name="account_password" id="accountPassword" required
-                            placeholder="Password"
+                            autocomplete="new-password" placeholder="Password"
                             pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
                         <span id="pswdBtn">Show Password</span>
                     </div>
