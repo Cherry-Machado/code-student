@@ -287,6 +287,7 @@ nav ul li a:hover {
   margin: 0 auto;
   border-radius: 10px;
   width: 90%;
+  box-shadow: 0 0 .8rem rgba(0, 0, 0, 0.3);
 
 }
 
@@ -311,7 +312,8 @@ nav ul li a:hover {
 .registerForm-control input,
 .loginForm-control input,
 .classificationForm-control input,
-.addinventoryForm-control input {
+.addinventoryForm-control input,
+.addinventoryForm-control textarea {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
   display: block;
@@ -324,7 +326,8 @@ nav ul li a:hover {
 .registerForm-control input:focus,
 .loginForm-control input:focus,
 .classificationForm-control input:focus,
-.addinventoryForm-control input:focus {
+.addinventoryForm-control input:focus,
+.addinventoryForm-control textarea:focus {
   outline: 0;
   border-color: #777;
 }
@@ -333,7 +336,8 @@ nav ul li a:hover {
 .registerForm-control input:focus:invalid,
 .loginForm-control input:focus:invalid,
 .classificationForm-control input:focus:invalid,
-.addinventoryForm-control input:focus:invalid {
+.addinventoryForm-control input:focus:invalid,
+.addinventoryForm-control textarea:focus:invalid {
   background-image: url(/images/site/invalid.png);
   background-position: right top;
   background-repeat: no-repeat;
@@ -346,7 +350,8 @@ nav ul li a:hover {
 .registerForm-control input:required:valid,
 .loginForm-control input:required:valid,
 .classificationForm-control input:required:valid,
-.addinventoryForm-control input:required:valid {
+.addinventoryForm-control input:required:valid,
+.addinventoryForm-control textarea:required:valid {
   background-image: url(/images/site/valid.png);
   background-color: #fff;
   background-position: right top;
@@ -372,6 +377,16 @@ nav ul li a:hover {
 
 }
 
+textarea {
+  resize: none;
+}
+
+#registerForm p,
+#loginForm p {
+  text-align: center;
+
+}
+
 #classificationForm p,
 #addinventoryForm p {
   text-align: center;
@@ -389,13 +404,15 @@ nav ul li a:hover {
 }
 
 .classificationFieldset input,
-.addinventoryFieldset input {
+.addinventoryFieldset input,
+.addinventoryFieldset textarea {
   margin-top: 10px;
   margin-bottom: 1.5rem;
 }
 
 .classificationFieldset label,
-.addinventoryFieldset label {
+.addinventoryFieldset label,
+.addinventoryFieldset textarea {
   font-weight: bold;
 }
 
