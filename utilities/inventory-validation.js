@@ -54,7 +54,6 @@ validate.inventoryRules = () => {
       .trim()
       .escape()
       .notEmpty()
-      .withMessage("Make value is missing")
       .isLength({ min: 1 })
       .withMessage("Please provide a make."),
 
