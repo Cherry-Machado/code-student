@@ -337,8 +337,8 @@ nav ul li a:hover {
 .loginForm-control input:focus:invalid,
 .classificationForm-control input:focus:invalid,
 .addinventoryForm-control input:focus:invalid,
-.addinventoryForm-control textarea:focus:invalid,
-.addinventoryForm-control select:focus:invalid {
+.addinventoryForm-control textarea:focus:invalid
+ {
   background-image: url(/images/site/invalid.png);
   background-position: right top;
   background-repeat: no-repeat;
@@ -352,8 +352,8 @@ nav ul li a:hover {
 .loginForm-control input:required:valid,
 .classificationForm-control input:required:valid,
 .addinventoryForm-control input:required:valid,
-.addinventoryForm-control textarea:required:valid,
-.addinventarioForm-control select:required:valid {
+.addinventoryForm-control textarea:required:valid
+ {
   background-image: url(/images/site/valid.png);
   background-color: #b2f9ae;
   background-position: right top;
