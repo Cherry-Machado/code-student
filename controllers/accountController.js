@@ -69,47 +69,17 @@ async function registerAccount(req, res) {
     );
     res.status(201).render("account/login", {
       title: "Login",
+      errors: null,
       nav,
     });
   } else {
     req.flash("notice", "Sorry, the registration failed.");
     res.status(501).render("account/register", {
       title: "Registration",
-      nav,
-    });
-  }
-}
-
-/* ****************************************
- *  Process login post request
- * ************************************ */
-async function accountLogin(req, res) {
-  let nav = await utilities.getNav();
-  const { account_email, account_password } = req.body;
-  const accountData = await accountModel.getAccountByEmail(account_email);
-  if (!accountData) {
-    req.flash("notice", "Please check your credentials and try again.");
-    res.status(400).render("account/login", {
-      title: "Login",
-      nav,
       errors: null,
-      account_email,
+      nav,
     });
-    return;
-  }
-  try {
-    if (await bcrypt.compare(account_password, accountData.account_password)) {
-      delete accountData.account_password;
-      //Faltalagalleoreo
-
-      return res.redirect("/account/");
-    } // Need to have a wrong password option
-    else {
-      req.flash("notice", "Please check your credentials and try again."); // Login was hanging with bad password but correct id
-      res.redirect("/account/");
-    }
-  } catch (error) {
-    return new Error("Access Forbidden");
   }
 }
-module.exports = { buildLogin, buildRegister, registerAccount, accountLogin };
+
+module.exports = { buildLogin, buildRegister, registerAccount };
