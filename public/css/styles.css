@@ -372,11 +372,13 @@ nav ul li a:hover {
 
 }
 
-#classificationForm p {
+#classificationForm p,
+#addinventoryForm p {
   text-align: center;
 }
 
-.classificationFieldset {
+.classificationFieldset,
+.addinventoryFieldset {
   position: relative;
   border: 1px solid var(--page-background);
   border-radius: 2px;
@@ -384,12 +386,14 @@ nav ul li a:hover {
   margin-top: 10px;
 }
 
-.classificationFieldset input {
+.classificationFieldset input,
+.addinventoryFieldset input {
   margin-top: 10px;
   margin-bottom: 1.5rem;
 }
 
-.classificationFieldset label {
+.classificationFieldset label,
+.addinventoryFieldset label {
   font-weight: bold;
 }
 
