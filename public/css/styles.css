@@ -337,11 +337,12 @@ nav ul li a:hover {
 .loginForm-control input:focus:invalid,
 .classificationForm-control input:focus:invalid,
 .addinventoryForm-control input:focus:invalid,
-.addinventoryForm-control textarea:focus:invalid {
+.addinventoryForm-control textarea:focus:invalid,
+.addinventoryForm-control select:focus:invalid {
   background-image: url(/images/site/invalid.png);
   background-position: right top;
   background-repeat: no-repeat;
-  background-color: rgb(237, 209, 199);
+  background-color: rgb(235, 199, 186);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -351,7 +352,8 @@ nav ul li a:hover {
 .loginForm-control input:required:valid,
 .classificationForm-control input:required:valid,
 .addinventoryForm-control input:required:valid,
-.addinventoryForm-control textarea:required:valid {
+.addinventoryForm-control textarea:required:valid,
+.addinventarioForm-control select:required:valid {
   background-image: url(/images/site/valid.png);
   background-color: #b2f9ae;
   background-position: right top;
@@ -411,8 +413,7 @@ textarea {
 }
 
 .classificationFieldset label,
-.addinventoryFieldset label,
-.addinventoryFieldset textarea {
+.addinventoryFieldset label {
   font-weight: bold;
 }
 
