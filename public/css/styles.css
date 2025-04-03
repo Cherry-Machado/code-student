@@ -380,6 +380,8 @@ nav ul li a:hover {
 .classificationFieldset,
 .addinventoryFieldset {
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
   border: 1px solid var(--page-background);
   border-radius: 2px;
   padding: 1rem;
@@ -694,14 +696,16 @@ nav ul li a:hover {
 
   #registerForm,
   #loginForm,
-  #classificationForm {
+  #classificationForm,
+  #addinventoryForm {
     font-size: 1.5rem;
     width: 40%;
   }
 
   #registerForm button,
   #loginForm button,
-  #classificationForm button {
+  #classificationForm button,
+  #addinventoryForm button {
     font-size: 1.2rem;
     margin: 10px 0;
     width: 40%;
