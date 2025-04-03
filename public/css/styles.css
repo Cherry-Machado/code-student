@@ -278,7 +278,8 @@ nav ul li a:hover {
 /********** login page ************/
 #registerForm,
 #loginForm,
-#classificationForm {
+#classificationForm,
+#addinventoryForm {
   background-color: aqua;
   padding: 30px 40px;
   font-family: inherit;
@@ -292,7 +293,8 @@ nav ul li a:hover {
 
 .registerForm-control,
 .loginForm-control,
-.classificationForm-control {
+.classificationForm-control,
+.addinventoryForm-control {
   margin-bottom: 10px;
   padding-bottom: 1rem;
   position: relative;
@@ -300,14 +302,16 @@ nav ul li a:hover {
 
 .registerForm-control label,
 .loginForm-control label,
-.classificationForm-control label {
+.classificationForm-control label,
+.addinventoryForm-control label {
   display: inline-block;
   margin-bottom: 5px;
 }
 
 .registerForm-control input,
 .loginForm-control input,
-.classificationForm-control input {
+.classificationForm-control input,
+.addinventoryForm-control input {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
   display: block;
@@ -319,7 +323,8 @@ nav ul li a:hover {
 
 .registerForm-control input:focus,
 .loginForm-control input:focus,
-.classificationForm-control input:focus {
+.classificationForm-control input:focus,
+.addinventoryForm-control input:focus {
   outline: 0;
   border-color: #777;
 }
@@ -327,7 +332,8 @@ nav ul li a:hover {
 /*.registerForm-control input:required:invalid,*/
 .registerForm-control input:focus:invalid,
 .loginForm-control input:focus:invalid,
-.classificationForm-control input:focus:invalid {
+.classificationForm-control input:focus:invalid,
+.addinventoryForm-control input:focus:invalid {
   background-image: url(/images/site/invalid.png);
   background-position: right top;
   background-repeat: no-repeat;
@@ -339,7 +345,8 @@ nav ul li a:hover {
 
 .registerForm-control input:required:valid,
 .loginForm-control input:required:valid,
-.classificationForm-control input:required:valid {
+.classificationForm-control input:required:valid,
+.addinventoryForm-control input:required:valid {
   background-image: url(/images/site/valid.png);
   background-color: #fff;
   background-position: right top;
@@ -348,7 +355,8 @@ nav ul li a:hover {
 
 #registerForm button,
 #loginForm button,
-#classificationForm button {
+#classificationForm button,
+#addinventoryForm button {
   background-color: #000000;
   border: 2px solid #ffffff;
   border-radius: 20px;
