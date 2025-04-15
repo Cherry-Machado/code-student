@@ -33,7 +33,7 @@ async function buildRegister(req, res, next) {
  * *************************************** */
 async function buildAccountManagementView(req, res, next) {
   req.flash("notice", `Congratulations, you\'re registered.`);
-  res.render("account/", {
+  res.render("account/account", {
     title: "Account Managementr",
     errors: null,
   });
