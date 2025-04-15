@@ -9,7 +9,7 @@ const utilities = require("../utilities");
 const regValidate = require("../utilities/account-validation");
 
 // Management view
-//router.get("/", utilities.handleErrors(accountController.buildAccountManagementView));
+router.get("/", utilities.handleErrors(accountController.buildAccountManagementView));
 
 // Route to build account View
 router.get("/login", utilities.handleErrors(accountController.buildLogin));

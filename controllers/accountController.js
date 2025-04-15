@@ -31,15 +31,13 @@ async function buildRegister(req, res, next) {
 /* ****************************************
  *  Deliver registration view
  * *************************************** */
-/*async function buildAccountManagementView(req, res, next) {
-  let nav = await utilities.getNav();
+async function buildAccountManagementView(req, res, next) {
   req.flash("notice", `Congratulations, you\'re registered.`);
   res.render("account/", {
     title: "Account Managementr",
-    nav,
     errors: null,
   });
-}*/
+}
 
 /* ****************************************
  *  Process Registration
