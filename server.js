@@ -5,6 +5,11 @@
 /* ***********************
  * Require Statements
  *************************/
+
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
+const invModel = require("./models/inventory-model");
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const env = require("dotenv").config();
@@ -24,7 +29,7 @@ const cookieParser = require("cookie-parser");
  * ************************/
 
 // Week 5 activity - Login validation.
-app.use(utilities.checkJWTToken)
+app.use(utilities.checkJWTToken);
 
 app.use(
   session({
