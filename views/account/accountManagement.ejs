@@ -1,9 +1,7 @@
-<!-- Content Heading -->
-<h1>
-    <%= title %>
-</h1>
-<!-- Flash message -->
+<h1><%- title %></h1>
+
 <%- messages() %>
+
     <% if (errors) { %>
         <ul class="notice">
             <% errors.array().forEach(error=> { %>
@@ -13,3 +11,6 @@
                 <% }) %>
         </ul>
         <% } %>
+
+            <h2>Welcome!</h2>
+            <h3>You're logged in</h3>
