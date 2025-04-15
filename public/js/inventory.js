@@ -7,23 +7,35 @@ classificationList.addEventListener("change", function () {
   console.log(`classification_id is: ${classification_id}`);
   let classIdURL = "/inv/getInventory/" + classification_id;
   fetch(classIdURL)
-    .then(function (response) {
-      if (response.ok) {
-        return response.json();
-      }
-      throw Error("Network response was not OK");
-    })
-    .then(function (data) {
-      console.log(data);
-      buildInventoryList(data);
-    })
-    .catch(function (error) {
-      console.log("There was a problem: ", error.message);
-    });
+  .then(function (response) {
+    const contentType = response.headers.get("content-type");
+
+    if (!contentType || !contentType.includes("application/json")) {
+      throw new TypeError("El servidor no devolvió JSON");
+    }
+
+    if (response.ok) {
+      return response.json();
+    }
+    throw Error("Network response was not OK");
+  })
+  .then(function (data) {
+    buildInventoryList(data);
+  })
+  .catch(function (error) {
+    console.error("Error:", error.message);
+    // Muestra un mensaje amigable al usuario
+    inventoryDisplay.innerHTML = `
+      <div class="alert alert-danger">
+        Error al cargar los datos. Por favor intente nuevamente.
+        <br><small>${error.message}</small>
+      </div>
+    `;
+  });
 });
 
 // Build inventory items into HTML table components and inject into DOM
-  function buildInventoryList(data) {
+function buildInventoryList(data) {
   let inventoryDisplay = document.getElementById("inventoryDisplay");
   // Set up the table labels
   let dataTable = "<thead>";
