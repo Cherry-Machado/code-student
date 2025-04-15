@@ -28,9 +28,6 @@ const cookieParser = require("cookie-parser");
  * Middleware
  * ************************/
 
-// Week 5 activity - Login validation.
-app.use(utilities.checkJWTToken);
-
 app.use(
   session({
     store: new (require("connect-pg-simple")(session))({
@@ -57,6 +54,8 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 
 // Middleware to parse cookies
 app.use(cookieParser());
+// Week 5 activity - Login validation.
+app.use(utilities.checkJWTToken);
 
 /* ***********************
  * View Engine and Templates
