@@ -40,13 +40,9 @@ router.post(
   utilities.handleErrors(invController.addInventory)
 );
 
-/*router.get(
-  "/getInventory/:classification_id",
-  utilities.checkAccountType,
-  utilities.handleErrors(invController.getInventoryJSON)
-);*/
 router.get(
   "/getInventory/:classification_id",
+  utilities.checkAccountType,
   utilities.handleErrors(invController.getInventoryJSON)
 );
 
