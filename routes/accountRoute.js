@@ -10,7 +10,7 @@ const regValidate = require("../utilities/account-validation");
 
 // Management view
 router.get(
-  "account/account-management",
+  "/",
   utilities.handleErrors(accountController.buildAccountManagementView)
 );
 
