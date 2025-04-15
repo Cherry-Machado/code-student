@@ -34,7 +34,7 @@ async function buildRegister(req, res, next) {
 async function accountManagementView(req, res) {
   let nav = await utilities.getNav();
   message = "Congratulations, you're registered";
-  res.render("/", {
+  res.render("/accountManagement", {
     title: "Account Management",
     nav,
     message,
