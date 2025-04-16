@@ -122,7 +122,7 @@ validate.inventoryRules = () => {
       .notEmpty()
       .isLength({ min: 1 })
       .isInt()
-      .withMessage("Please provide a make."),
+      .withMessage("Please select a Classification."),
   ];
 };
 
