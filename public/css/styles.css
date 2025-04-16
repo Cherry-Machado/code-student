@@ -466,7 +466,7 @@ textarea {
 
 /***********Clasificstion Vehicles list Table********/
 /* Estilos generales para la tabla */
-#inventoryDisplay {
+/*#inventoryDisplay {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
@@ -474,53 +474,53 @@ textarea {
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
-}
+}*/
 
 /* Estilo para el encabezado de la tabla */
-#inventoryDisplay thead {
+/*#inventoryDisplay thead {
   background-color: #2c3e50;
   color: white;
-}
+}*/
 
-#inventoryDisplay thead th {
+/*#inventoryDisplay thead th {
   padding: 15px;
   text-align: left;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
+}*/
 
 /* Estilo para las celdas del cuerpo */
-#inventoryDisplay tbody tr {
+/*#inventoryDisplay tbody tr {
   border-bottom: 1px solid #e0e0e0;
   transition: all 0.3s ease;
-}
+}*/
 
-#inventoryDisplay tbody tr:nth-child(even) {
+/*#inventoryDisplay tbody tr:nth-child(even) {
   background-color: #f8f9fa;
-}
+}*/
 
-#inventoryDisplay tbody tr:hover {
+/*#inventoryDisplay tbody tr:hover {
   background-color: #f1f5f9;
   transform: scale(1.005);
-}
+}*/
 
-#inventoryDisplay tbody td {
+/*#inventoryDisplay tbody td {
   padding: 12px 15px;
   color: #333;
-}
+}*/
 
 /* Estilo para los enlaces */
-#inventoryDisplay a {
+/*#inventoryDisplay a {
   display: inline-block;
   padding: 6px 12px;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.2s ease;
-}
+}*/
 
-#inventoryDisplay a[href*="edit"] {
+/*#inventoryDisplay a[href*="edit"] {
   background-color: #3498db;
   color: white;
   margin-right: 5px;
@@ -537,12 +537,12 @@ textarea {
 
 #inventoryDisplay a[href*="delete"]:hover {
   background-color: #c0392b;
-}
+}*/
 
 /* Efectos adicionales */
-#inventoryDisplay {
+/*#inventoryDisplay {
   animation: fadeIn 0.5s ease-out;
-}
+}*/
 
 @keyframes fadeIn {
   from {
