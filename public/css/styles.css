@@ -279,7 +279,8 @@ nav ul li a:hover {
 #registerForm,
 #loginForm,
 #classificationForm,
-#addinventoryForm {
+#addinventoryForm,
+#updateForm {
   background-color: aqua;
   padding: 30px 40px;
   font-family: inherit;
@@ -304,7 +305,8 @@ nav ul li a:hover {
 .registerForm-control label,
 .loginForm-control label,
 .classificationForm-control label,
-.addinventoryForm-control label {
+.addinventoryForm-control label,
+#updateForm label {
   display: inline-block;
   margin-bottom: 5px;
 }
@@ -313,7 +315,9 @@ nav ul li a:hover {
 .loginForm-control input,
 .classificationForm-control input,
 .addinventoryForm-control input,
-.addinventoryForm-control textarea {
+.addinventoryForm-control textarea,
+#updateForm input,
+#updateForm input {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
   display: block;
@@ -361,7 +365,8 @@ nav ul li a:hover {
 #registerForm button,
 #loginForm button,
 #classificationForm button,
-#addinventoryForm button {
+#addinventoryForm button,
+#updateForm input[type="submit"] {
   background-color: #000000;
   border: 2px solid #ffffff;
   border-radius: 20px;
@@ -626,7 +631,8 @@ textarea {
   #registerForm,
   #loginForm,
   #classificationForm,
-  #addinventoryForm {
+  #addinventoryForm,
+  #updateForm {
     font-size: 1.5rem;
     width: 40%;
   }
@@ -634,7 +640,8 @@ textarea {
   #registerForm button,
   #loginForm button,
   #classificationForm button,
-  #addinventoryForm button {
+  #addinventoryForm button,
+  #updateForm button {
     font-size: 1.2rem;
     margin: 10px 0;
     width: 40%;
