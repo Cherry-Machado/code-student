@@ -42,7 +42,7 @@ invCont.buildManagementView = async function (req, res, next) {
   let nav = await utilities.getNav();
   const classificationSelect = await utilities.buildClassificationList();
   res.render("./inventory/management", {
-    title: "Vehicle Management",
+    title: "Vehicles Management",
     nav,
     errors: null,
     classificationSelect,
@@ -216,7 +216,11 @@ invCont.deleteInventory = async function (req, res, next) {
 
   if (queryResponse) {
     // const itemName = queryResponse.inv_make + " " + queryResponse.inv_model;
-    req.flash("notice", `The ${itemName} was successfully deleted.`);
+    req.flash('notice', {
+      message: `The ${itemName} was successfully deleted.`,
+      type: 'success',  // 'error' para mensajes de error
+      autoHide: true    // Bandera para autodestrucción
+    });
     res.redirect("/inv/");
   } else {
     // const classifications = await utilities.buildClassificationList(
