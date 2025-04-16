@@ -46,4 +46,8 @@ router.get(
   utilities.handleErrors(invController.getInventoryJSON)
 );
 
+// Delete vehicle information routes
+router.get("/delete/:inventoryId", utilities.handleErrors(invController.buildDeleteInventory));
+router.post("/delete/", utilities.handleErrors(invController.deleteInventory));  // Don't need validation
+
 module.exports = router;

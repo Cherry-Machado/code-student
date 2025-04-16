@@ -90,9 +90,41 @@ async function addInventory(
   }
 }
 
+/* ***************************
+ *  Get a single inventory item by id
+ * ************************** */
+async function getInventoryByInventoryId(inventoryId) {
+  try {
+    const data = await pool.query(
+      `SELECT * FROM public.inventory
+        INNER JOIN public.classification
+        ON public.inventory.classification_id = public.classification.classification_id
+        WHERE inv_id = $1`,
+      [inventoryId]
+    );
+    return data.rows;
+  } catch (error) {
+    console.error("getInventoryByInventoryId error" + error);
+  }
+}
+
+/*******************************
+ * Delete Inventory Data
+ *******************************/
+async function deleteInventory(inv_id) {
+  const sql = "DELETE FROM inventory WHERE inv_id = $1";
+  try {
+    return await pool.query(sql, [inv_id]);
+  } catch (error) {
+    console.error("deleteInventory error. " + error);
+  }
+}
+
 module.exports = {
   getInventoryByClassificationId,
   getClassifications,
   addClassification,
   addInventory,
+  getInventoryByInventoryId,
+  deleteInventory,
 };
