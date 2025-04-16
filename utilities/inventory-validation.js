@@ -1,4 +1,4 @@
-const utilities = require("../utilities");
+const utilities = require("./index");
 const invModel = require("../models/inventory-model");
 const { body, validationResult } = require("express-validator");
 const validate = {};

@@ -3,7 +3,7 @@ const express = require("express");
 const router = new express.Router();
 const invController = require("../controllers/invController");
 const utilities = require("../utilities");
-const invValidate = require("../utilities/inventory-validation");
+const Validate = require("../utilities/inventory-validation");
 
 //router.use(["/add-classification", "/add-inventory"], utilities.checkLogin);
 
@@ -23,8 +23,8 @@ router.get(
 );
 router.post(
   "/add-classification",
-  invValidate.classificationRules(),
-  invValidate.checkClassificationData,
+  Validate.classificationRules(),
+  Validate.checkClassificationData,
   utilities.handleErrors(invController.addClassification)
 );
 
@@ -35,8 +35,8 @@ router.get(
 );
 router.post(
   "/add-inventory",
-  invValidate.inventoryRules(),
-  invValidate.checkInventoryData,
+  Validate.inventoryRules(),
+  Validate.checkInventoryData,
   utilities.handleErrors(invController.addInventory)
 );
 
@@ -47,7 +47,17 @@ router.get(
 );
 
 // Delete vehicle information routes
-router.get("/delete/:inventoryId", utilities.handleErrors(invController.buildDeleteInventory));
-router.post("/delete/", utilities.handleErrors(invController.deleteInventory));  // Don't need validation
+router.get(
+  "/delete/:inventoryId",
+  utilities.handleErrors(invController.buildDeleteInventory)
+);
+router.post("/delete/", utilities.handleErrors(invController.deleteInventory)); // Don't need validation
+
+// Build edit/update inventory views
+router.get(
+  "/edit/:inventoryId",
+  utilities.handleErrors(invController.buildEditInventory)
+);
+router.post("/update/", utilities.handleErrors(invController.updateInventory));
 
 module.exports = router;

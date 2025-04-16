@@ -23,6 +23,7 @@ const session = require("express-session");
 const pool = require("./database/");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
+const flash = require('connect-flash');
 
 /* ***********************
  * Middleware
@@ -41,12 +42,22 @@ app.use(
   })
 );
 
+app.use(flash());
+app.use((req, res, next) => {
+  // Configura el tiempo de vida del mensaje (3 segundos)
+  res.locals.flashAutoHide = true;
+  res.locals.flashTimeout = 3000; // ms
+  next();
+});
+
 // Express Messages Middleware
 app.use(require("connect-flash")());
 app.use(function (req, res, next) {
   res.locals.messages = require("express-messages")(req, res);
   next();
 });
+
+
 
 //  Unit 4, Process Registration Activity
 app.use(bodyParser.json());
