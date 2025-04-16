@@ -427,6 +427,33 @@ textarea {
   padding: 1rem 0;
 }
 
+/******************* Booton Candelar de Delete Vehicle ******************/
+.btn-del-cancel {
+  background: #22b708;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-del-cancel:hover {
+  background: #22b708;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-del-cancel:active {
+  transform: translateY(0);
+}
+
+
+
 #pswdBtn {
   background-color: #fff;
   border: 2px solid #000;
