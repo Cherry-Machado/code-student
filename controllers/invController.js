@@ -168,7 +168,7 @@ invCont.addInventory = async function (req, res, next) {
  *  Return Inventory by Classification As JSON
  * ************************** */
 invCont.getInventoryJSON = async (req, res, next) => {
-  const classification_id = parseInt(req.params.classificationId);
+  const classification_id = parseInt(req.params.classification_id);
   const invData = await invModel.getInventoryByClassificationId(
     classification_id
   );
